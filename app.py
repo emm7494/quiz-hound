@@ -1,8 +1,9 @@
-from quiz_hound import create_app
+from app import create_app, db
+from app import models
 
 app = create_app()
 
 
 @app.shell_context_processor
 def make_shell_context():
-    return {"config": app.config}
+    return {"mls": models, "db": db, "cfg": app.config}

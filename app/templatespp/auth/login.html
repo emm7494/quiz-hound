@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% import 'macros/_macros.html' as macros %}
+
+{% block main %}
+<form method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <dl>
+    {{ macros.render_field(form.username, size=32)}}
+    {{ macros.render_field(form.password, size=32)}}
+  </dl>
+  <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+  <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
