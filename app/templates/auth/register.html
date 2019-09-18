@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import 'macros/_macros.html' as macros %}
+
+{% block main -%}
+<h1>Register</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <dl>
+        {{ macros.render_field(form.username, size=32) }}
+        {{ macros.render_field(form.email, size=64) }}
+        {{ macros.render_field(form.password, size=32) }}
+        {{ macros.render_field(form.password2, size=32) }}
+    </dl>
+    <p>{{ form.submit() }}</p>
+</form>
+{%- endblock %}

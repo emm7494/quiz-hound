@@ -1,9 +1,9 @@
 from app import create_app, db
-from app import models
+from app.models import User
 
 app = create_app()
 
 
 @app.shell_context_processor
 def make_shell_context():
-    return {"mls": models, "db": db, "cfg": app.config}
+    return {"db": db, "User": User}
