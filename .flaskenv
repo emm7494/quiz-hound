@@ -2,7 +2,8 @@ FLASK_ENV=development
 FLASK_DEBUG=1
 FLASK_HOST=0.0.0.0
 FLASK_PORT=5000
-FLASK_APP=app.py
+FLASK_APP=wsgi.py
+#FLASK_APP=app.py
 
 #import these manually in your config.py file
 #DATABASE_URL=None
