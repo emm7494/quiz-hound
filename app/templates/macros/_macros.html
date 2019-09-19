@@ -6,14 +6,14 @@
 {% endif %}
 {% endmacro %}
 
-{% macro set_navlink(endpoint, name) %}
+{% macro set_navlink(name, endpoint) %}
 {% if request.endpoint.endswith(endpoint) %}
 <li class="active">
-    <a href="{{ url_for(endpoint) }}"> {{ name }} </a>
+    <a href="{{ url_for(endpoint, **kwargs) }}"> {{ name }} </a>
 </li>
 {% else %}
 <li>
-    <a href="{{ url_for(endpoint) }}"> {{ name }} </a>
+    <a href="{{ url_for(endpoint, **kwargs) }}"> {{ name }} </a>
 </li>
 {% endif %}
 {% endmacro %}

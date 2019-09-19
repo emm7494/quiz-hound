@@ -14,11 +14,12 @@
 <body>
     <nav>
         <ul class="nav navbar-nav">
-            {{ macros.set_navlink('main.index', 'Home') }}
+            {{ macros.set_navlink('Home', 'main.index') }}
             {% if current_user.is_anonymous %}
-            {{ macros.set_navlink('auth.login', 'Login') }}
+            {{ macros.set_navlink('Login', 'auth.login') }}
             {% else %}
-            {{ macros.set_navlink('auth.logout', 'Logout') }}
+            {{ macros.set_navlink('Profile', 'main.user', username=current_user.username) }}
+            {{ macros.set_navlink('Logout', 'auth.logout') }}
             {% endif %}
         </ul>
     </nav>
@@ -32,10 +33,7 @@
     </ul>
     {% endif %}
     {% endwith %}
-    <main>
-        {%- block main %}
-        {% endblock -%}
-    </main>
+    <main>{% block main %}{% endblock %}</main>
     <script src="{{ url_for('static', filename='jquery-3.3.1.slim.min.js') }}"></script>
     <script src="{{ url_for('static', filename='popper.min.js') }}"></script>
     <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
