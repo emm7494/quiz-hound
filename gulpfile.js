@@ -54,9 +54,9 @@ function watchFiles(params) {
   gulp
     .watch(["**/**/*.py"])
     .on("change", browserSync.reload);
-  gulp
-    .watch(["**/**/*.sqlite"])
-    .on("change", browserSync.reload);
+  // gulp
+  //   .watch(["**/**/*.sqlite"])
+  //   .on("change", browserSync.reload);
 }
 
 /* function templates(e) {
