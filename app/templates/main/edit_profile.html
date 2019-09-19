@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% import 'macros/_macros.html' as macros %}
+
+{% block main %}
+<h1>{{ title }}</h1>
+<form action="post">
+    <dl>
+        {{ macros.render_field(form.username) }}
+        {{ macros.render_field(form.about_me) }}
+    </dl>
+    {{ macros.render_field(form.submit) }}
+</form>
+{% endblock %}
